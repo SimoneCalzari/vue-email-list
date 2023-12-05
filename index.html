@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- AXIOS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <!-- /AXIOS -->
   <!-- MY STYLE -->
   <link rel="stylesheet" href="style.css">
@@ -14,6 +14,16 @@
 </head>
 
 <body>
+  <div id="app" v-cloak>
+    <!-- TITOLO -->
+    <h1>Email List</h1>
+    <!-- /TITOLO -->
+    <!-- LISTA EMAIL -->
+    <ul v-show="emailList.length === numEmail">
+      <li v-for="email in emailList">{{ email }}</li>
+    </ul>
+    <!-- /LISTA EMAIL -->
+  </div>
   <!-- VUE JS -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <!-- /VUE JS -->
