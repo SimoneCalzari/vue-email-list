@@ -15,14 +15,21 @@
 
 <body>
   <div id="app" v-cloak>
-    <!-- TITOLO -->
-    <h1>Email List</h1>
-    <!-- /TITOLO -->
-    <!-- LISTA EMAIL -->
-    <ul v-show="emailList.length === numEmail">
-      <li v-for="email in emailList">{{ email }}</li>
-    </ul>
-    <!-- /LISTA EMAIL -->
+    <div class="container">
+      <main v-show="emailList.length === numEmail">
+        <!-- TITOLO -->
+        <h1>Email List</h1>
+        <!-- /TITOLO -->
+        <!-- LISTA EMAIL -->
+        <ul>
+          <li v-for="email in emailList">
+            <div class="initials">{{ getInitials(email) }}</div>
+            <div class="contact">{{ email }}</div>
+          </li>
+        </ul>
+        <!-- /LISTA EMAIL -->
+      </main>
+    </div>
   </div>
   <!-- VUE JS -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

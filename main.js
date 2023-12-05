@@ -12,11 +12,21 @@ createApp({
   },
   mounted() {
     for (let i = 0; i < this.numEmail; i++) {
-      axios.get(this.apiBoolean).then((emailResponse) => {
-        console.log("cpu");
-        this.emailList.push(emailResponse.data.response);
-      });
+      this.generaEmail();
     }
   },
-  methods: {},
+  methods: {
+    generaEmail() {
+      axios.get(this.apiBoolean).then((emailResponse) => {
+        this.emailList.push(emailResponse.data.response);
+      });
+    },
+    getInitials(email) {
+      const array = email.split(".");
+      if (array.length > 2) {
+        return array[0].charAt(0) + array[1].charAt(0);
+      }
+      return array[0].charAt(0);
+    },
+  },
 }).mount("#app");
