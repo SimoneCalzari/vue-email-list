@@ -24,9 +24,9 @@ createApp({
     getInitials(email) {
       const array = email.split(".");
       if (array.length > 2) {
-        return array[0].charAt(0) + array[1].charAt(0);
+        return array[0][0] + array[1][0];
       }
-      return array[0].charAt(0);
+      return array[0][0];
     },
   },
 }).mount("#app");
